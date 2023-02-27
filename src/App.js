@@ -25,7 +25,7 @@ function App() {
       <div className='container'>
       {
         isFromVisible ? <Form setIsFormVisible={setIsFormVisible} addData={addData}/> : 
-        <Table setIsFormVisible={setIsFormVisible} updateData={updateData}/>
+        <Table setIsFormVisible={setIsFormVisible}  updateData={updateData}/>
       }
       </div>
     </Context.Provider>

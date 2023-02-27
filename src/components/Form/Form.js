@@ -30,6 +30,7 @@ export const Form = (props) => {
             <input type='text' value={lastName} onChange={(event) => {setLastName(event.target.value)}} placeholder='გვარი'/>
             <input type='text' value={personNum} onChange={(event) => {setPersonNum(event.target.value)}} min='11' placeholder='პირადი ნომერი'/>
             <select name='gender' id='gender' value={gender} onChange={(event) => {setGender(event.target.value)}}>
+                <option></option>
                 <option calue='male'>Male</option>
                 <option calue='female'>Female</option>
             </select>
