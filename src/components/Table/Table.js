@@ -2,7 +2,7 @@ import './index.css'
 import MUIDataTable from "mui-datatables";
 import AddIcon from '@mui/icons-material/Add';
 
-export const Table = () => {
+export const Table = (props) => {
 
     const columns = ["სახელი", "გვარი", "პირადი ნომერი", "სქესი", "დაბადების თარიღი", "დაბადების ადგილი", "მისმართი"];
     const data = [
@@ -20,7 +20,7 @@ export const Table = () => {
                 columns={columns}
                 options={{
                     ...options,
-                    customToolbar: () => (<AddIcon aria-label='Add' id='plus-button' className='MuiButtonBase-root MuiIconButton-root tss-10rusft-MUIDataTableToolbar-icon MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root' />),
+                    customToolbar: () => (<AddIcon onClick={() => {props.setIsFormVisible(true)}} aria-label='Add' id='plus-button' className='MuiButtonBase-root MuiIconButton-root tss-10rusft-MUIDataTableToolbar-icon MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root' />),
                   }}
             />
         </div>

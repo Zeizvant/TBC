@@ -1,12 +1,14 @@
 import './index.css'
 import CloseIcon from '@mui/icons-material/Close';
 
-export const Form = () => {
+export const Form = (props) => {
+
+
     return (
         <div className="form">
             <div className='header'>
                 <h1 className='form-header'>ველის დამატება</h1>
-                <CloseIcon className='close-btn'/>
+                <CloseIcon onClick={() => {props.setIsFormVisible(false)}} className='close-btn'/>
             </div>
             <input type='text' placeholder='სახელი'/>
             <input type='text' placeholder='გვარი'/>
@@ -21,7 +23,7 @@ export const Form = () => {
             </select>
             <input type='text' placeholder='დაბადების ადგილი'/>
             <input type='text' placeholder='მისამართი'/>
-            <button>შენახვა</button>
+            <button type='button' onClick={() => {props.setIsFormVisible(false)}}>შენახვა</button>
         </div>
     )
 }
