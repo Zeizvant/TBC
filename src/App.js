@@ -14,12 +14,18 @@ function App() {
     setData([...data, newData])
   }
 
+  const updateData = (updateData, index) => {
+    let array = data
+    array[index] = updateData
+    setData([...data])
+  }
 
   return (
     <Context.Provider value={data}>
       <div className='container'>
       {
-        isFromVisible ? <Form setIsFormVisible={setIsFormVisible} addData={addData}/> : <Table setIsFormVisible={setIsFormVisible} />
+        isFromVisible ? <Form setIsFormVisible={setIsFormVisible} addData={addData}/> : 
+        <Table setIsFormVisible={setIsFormVisible} updateData={updateData}/>
       }
       </div>
     </Context.Provider>

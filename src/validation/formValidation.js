@@ -1,5 +1,4 @@
 export const formValidation = (data, array) => {
-    console.log(array)
     for(const value of data){
         if(value === ""){
             return false

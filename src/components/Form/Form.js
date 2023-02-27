@@ -29,14 +29,14 @@ export const Form = (props) => {
             <input type='text' placeholder='სახელი' value={name} onChange={(event) => {setName(event.target.value)}}/>
             <input type='text' value={lastName} onChange={(event) => {setLastName(event.target.value)}} placeholder='გვარი'/>
             <input type='text' value={personNum} onChange={(event) => {setPersonNum(event.target.value)}} min='11' placeholder='პირადი ნომერი'/>
-            <div className='date'>
-                <label>დაბადების თარიღი</label>
-                <input type='date' value={date} onChange={(event) => {setDate(event.target.value)}}/>   
-            </div>
             <select name='gender' id='gender' value={gender} onChange={(event) => {setGender(event.target.value)}}>
                 <option calue='male'>Male</option>
                 <option calue='female'>Female</option>
             </select>
+            <div className='date'>
+                <label>დაბადების თარიღი</label>
+                <input type='date' value={date} onChange={(event) => {setDate(event.target.value)}}/>   
+            </div>
             <input type='text' placeholder='დაბადების ადგილი' value={place} onChange={(event) => {setPlace(event.target.value)}}/>
             <input type='text' placeholder='მისამართი' value={address} onChange={(event) => {setAddress(event.target.value)}}/>
             <button type='button' onClick={() => {
