@@ -1,12 +1,15 @@
 import './index.css'
 import MUIDataTable from "mui-datatables";
 import AddIcon from '@mui/icons-material/Add';
+import { useContext, useState } from 'react';
+import { Context } from '../../App';
 
 export const Table = (props) => {
 
+    const data = useContext(Context)
+
     const columns = ["სახელი", "გვარი", "პირადი ნომერი", "სქესი", "დაბადების თარიღი", "დაბადების ადგილი", "მისმართი"];
-    const data = [
-    ];
+    
        
     const options = {
         filterType: 'checkbox',

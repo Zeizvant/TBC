@@ -1,18 +1,28 @@
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 import React from 'react';
 import './App.css';
 import { Form } from './components/Form/Form';
 import { Table } from './components/Table/Table';
 
+export const Context = createContext()
+
 function App() {
   const [isFromVisible, setIsFormVisible] = useState(false)
+  const [data, setData] = useState([])
+
+  const addData = (newData) => {
+    setData([...data, newData])
+  }
+
 
   return (
-    <div className='container'>
-    {
-      isFromVisible ? <Form setIsFormVisible={setIsFormVisible}/> : <Table setIsFormVisible={setIsFormVisible} />
-    }
-  </div>
+    <Context.Provider value={data}>
+      <div className='container'>
+      {
+        isFromVisible ? <Form setIsFormVisible={setIsFormVisible} addData={addData}/> : <Table setIsFormVisible={setIsFormVisible} />
+      }
+      </div>
+    </Context.Provider>
   )
   
 }
